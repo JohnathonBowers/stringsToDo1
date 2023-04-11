@@ -86,3 +86,57 @@ function acronym(str) {
     }
     return acronymStr
 }
+
+/*
+
+COUNT NON-SPACES
+
+Create a function that, given a string, returns the number of non-space characters found in the string. 
+
+Examples:
+
+countNonSpaces("Honey pie, you are driving me crazy") => 29
+countNonSpaces("Hello world !") => 11
+
+*/
+
+// Brute force approach using two helper functions I've previously written
+function removeAt(arr, idx) {
+    for(let i = idx; i < arr.length - 1; i++){
+        arr[i] = arr[i + 1];
+    }
+    arr.length = arr.length - 1;
+    return arr;
+}
+
+function removeBlanks(str) {
+    const arr = []
+    let newString = ""
+    for(let i = 0; i < str.length; i++) {
+        arr[arr.length] = str[i]
+    }
+    for(let j = 0; j < arr.length; j++) {
+        if (arr[j] === " ") {
+            removeAt(arr, j)
+        }
+    }
+    for(let k = 0; k < arr.length; k++) {
+        newString += arr[k]
+    }
+    return newString
+}
+
+function countNonSpaces(str) {
+    const noSpacesStr = removeBlanks(str)
+    return noSpacesStr.length
+}
+
+// Simpler function using the .split() method
+function countNonSpaces2(str) {
+    let newString = ""
+    let stringArr = str.split(" ")
+    for (let textBlock of stringArr) {
+        newString += textBlock
+    }
+    return newString.length
+}
