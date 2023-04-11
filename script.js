@@ -40,3 +40,26 @@ function removeBlanks(str) {
 }
 
 
+/* 
+
+GET DIGITS
+
+Create a JavaScript function that given a string, returns the integer made from the string’s digits. You are allowed to use isNaN() and Number().
+
+Examples:
+
+getDigits("abc8c0d1ngd0j0!8") => 801008
+
+getDigits("0s1a3y5w7h9a2t4?6!8?0") => 1357924680
+
+*/
+
+function getDigits(str) {
+    let newStr = ""
+    for (let i = 0; i < str.length; i++) {
+        if (!isNaN(str[i])) {
+            newStr += str[i]
+        }
+    }
+    return Number(newStr)
+}
