@@ -63,3 +63,26 @@ function getDigits(str) {
     }
     return Number(newStr)
 }
+
+/*
+
+ACRONYM
+
+Create a function that, given a string, returns the string’s acronym (first letter of the word capitalized). You are allowed to use .split() and .toUpperCase().
+
+acronym(" there's no free lunch - gotta pay yer way. ") => "TNFL-GPYW". 
+
+acronym("Live from New York, it's Saturday Night!") => "LFNYISN"
+
+*/
+
+function acronym(str) {
+    let arr = str.split(" ")
+    let acronymStr = ""
+    for(textBlock of arr) {
+        if(textBlock[0] !== undefined) {
+            acronymStr += textBlock[0].toUpperCase()
+        }
+    }
+    return acronymStr
+}
