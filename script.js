@@ -140,3 +140,28 @@ function countNonSpaces2(str) {
     }
     return newString.length
 }
+
+/*
+
+REMOVE SHORTER STRINGS
+
+Create a function that, given an array of strings and a numerical value, returns an array that only contains strings longer than or equal to the given value.
+
+Examples:
+
+removeShorterStrings(['Good morning', 'sunshine', 'the', 'Earth', 'says', 'hello'], 4) => ['Good morning', 'sunshine', 'Earth', 'says', 'hello']
+removeShorterStrings(['There', 'is', 'a', 'bug', 'in', 'the', 'system'], 3) => ['There', 'bug', 'the', 'system']
+
+*/
+
+function removeShorterStrings(arr, int) {
+    const filteredArr = []
+    let filteredArrIdx = 0
+    for (str of arr) {
+        if (str.length >= int) {
+            filteredArr[filteredArrIdx] = str
+            filteredArrIdx++
+        }
+    }
+    return filteredArr
+}
